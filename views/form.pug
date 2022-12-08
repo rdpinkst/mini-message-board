@@ -1,9 +1,23 @@
 extends layout 
 
-block content 
-  h1= "Working"
+
+block content
+  h1(class='mb-4 display-4 text-center')= "Write your message!"
+  form(method='POST' action='/new')
     input(
+      class='form-control mb-3'
       type='text'
       name='user'
       placeholder='Username'
+    )
+    input(
+      class='form-control mb-3'
+      type='text'
+      name='message'
+      placeholder="Message to upload"
+    )
+    input(
+      class='btn btn-primary mb-3'
+      type='submit'
+      value='Submit Post'
     )
