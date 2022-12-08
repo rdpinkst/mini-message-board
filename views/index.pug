@@ -1,15 +1,15 @@
 extends layout
 
-block content
+block content 
   h1= title
-  p Welcome to #{title}
-
-  each message in messages
-    li
-      block content 
-      h3=message.user
-      p=message.added
-      p=message.text
-
-  a(href="/new")='New message'
+  p Welcome to #{title}. An app built using express, pug, and bootstrap.
+  ul(class='list-group')
+    each message in messages
+      li(class='list-group-item mb-3')
+        block content 
+          div(class='d-flex justify-content-between')
+            h3=message.user
+            small=message.added
+        p=message.text
+  a(href='/new' class='btn btn-primary')='New message'
 

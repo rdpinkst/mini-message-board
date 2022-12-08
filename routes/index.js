@@ -2,12 +2,12 @@ const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: new Date(),
+    added: new Date().toLocaleString(),
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: new Date(),
+    added: new Date().toLocaleString(),
   }
 ]
 
@@ -21,7 +21,7 @@ router.post('/new', function(req, res, next) {
     const post = {
       text: newPost.message,
       user: newPost.user,
-      added: new Date(),
+      added: new Date().toLocaleString(),
     }
     messages.push(post);
   } 
